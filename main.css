@@ -1,90 +1,317 @@
-/* Reset básico para margens e padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+header,
+section h2,
+section h3,
+form button {
+    font-family: "Concert One", sans-serif;
+    font-weight: bold;
+}
+
+body, input, textarea {
+    font-family: "Roboto", sans-serif;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
+    padding: 16px 0;
+    background-color: #94d4b6;
+    color: #0b3b27;
 }
 
-.sobre {
-    background-color: #fff;
+header .container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
-
-.produto {
-    padding: 2rem;
-    background-color: #fff;
+header nav ul {
+    display: flex;
+    list-style: none;
 }
 
-.produto h2 {
+header nav li {
+    display: flex;
+    margin-left: 16px;
+    font-size: 18px;
+}
+
+header nav li a {
+    color: #0b3b27;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#sobre {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+}
+
+#sobre .container {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    justify-content: center;
+}
+
+.imagem-loja {
+    padding: 16px;
+    width: 450px;
+    height: 550px;
+    object-fit: cover; 
+    margin-bottom: 16px;
+}
+
+.texto-sobre {
+    padding: 16px;
+    width: 450px;
+    height: 550px;
+    color: #0b3b27;
+}
+
+#sobre h2 {
+    margin-bottom: 16px;
+}
+
+#sobre p {
+    margin-bottom: 8px;
+}
+
+.lista-marcas {
+    display: flex;
+    gap: 8px;
+}
+
+.lista-marcas img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+}
+
+#produtos {
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+#produtos h2 {
+    margin-bottom: 28px;
     text-align: center;
-    margin-bottom: 1rem;
+    background-color: #94d4b6;
+    color: #0b3b27;
 }
 
+.lista-produtos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
 
 .produto {
-    background-color: #fff;
-    display: grid;
-    grid-template-columns: repeat(4, 24.6%);
-    column-gap: 1%;
-    row-gap: 5%;
+    border: 1px solid #ccc;
+    padding: 16px;
+    text-align: center;
+    background-color: #f9f9f9;
 }
 
 .produto img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    margin-bottom: 0.5rem;
+    max-width: 200px;
+    margin-bottom: 8px;
 }
 
 .produto h3 {
-    margin: 0.5rem 0;
+    margin-bottom: 8px;
+    font-size: 1.2em;
 }
 
 .produto p {
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
+    font-size: 0.9em;
 }
 
-button {
-    background-color: #333;
-    color: #fff;
+.produto button {
+    background-color: #94d4b6;
+    color: #0b3b27;
     border: none;
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
+    padding: 8px 16px;
     cursor: pointer;
+    font-size: 1em;
 }
 
-button:hover {
-    background-color: #555;
+.produto button:hover {
+    background-color: #7abf9b;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    bottom: 0;
+#contato .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 32px; 
     width: 100%;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    .container{
+.coluna1 {
+    padding: 16px;
+}
+
+.coluna1, h2, h3{
+    color: #0b3b27;
+}
+
+form input,
+form textarea,
+form button {
+    display: grid;
+    width: 320px;
+    margin-bottom: 8px;
+    padding: 8px;
+}
+
+form textarea {
+    resize: none;
+    height: 100px;
+}
+
+form button {
+    background-color: #94d4b6;
+    color: #0b3b27;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #7abf9b;
+}
+
+input:focus,
+textarea:focus {
+    outline-color: #94d4b6;
+}
+
+.coluna2 {
+    padding: 16px;
+    color: #0b3b27;
+}
+
+.links{
+    padding: 16px;
+}
+
+.endereco{
+    padding: 16px;
+}
+
+.links-sociais img {
+    height: 24px;
+}
+
+.links-sociais li {
+    display: inline;
+    margin-right: 8px;
+}
+
+.links-sociais li a {
+    text-decoration: none;
+}
+
+footer {
+    background-color: #0b3b27;
+    color: #94d4b6;
+    padding: 16px 0;
+}
+
+@media screen and (max-width: 767px) {
+    .container {
         max-width: 90%;
+    }
+
+    #sobre .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imagem-loja {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+    }
+
+    .lista-produtos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contato-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .coluna1, .coluna2 {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 16px;
     }
 }
 
+@media screen and (max-width: 1024px) {
+    .lista-produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        max-width: 90%;
+    }
+
+    #sobre .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imagem-loja {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+    }
+
+    .lista-produtos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contato-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .coluna1, .coluna2 {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 16px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .lista-produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .imagem-loja, .texto-sobre {
+        width: 100%;
+        height: auto;
+    }
+}
 
